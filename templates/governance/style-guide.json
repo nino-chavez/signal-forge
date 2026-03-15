@@ -1,0 +1,228 @@
+{
+  "$schema": "style-guide-schema.json",
+  "version": "1.0.0",
+  "terminology": {
+    "preferred": {
+      "GEO": {
+        "definition": "Generative Engine Optimization",
+        "usage": "Use as primary term for AI-era optimization",
+        "avoid": ["AEO", "Answer Engine Optimization"],
+        "note": "AEO acceptable in historical context or when referencing older materials"
+      },
+      "citation": {
+        "definition": "When an AI system references or quotes content from a source",
+        "usage": "The primary success metric for GEO",
+        "avoid": ["mention", "link"],
+        "note": "Be specific: 'direct citation' vs 'implicit reference'"
+      },
+      "agentic commerce": {
+        "definition": "AI agents autonomously completing purchase transactions",
+        "usage": "Use when discussing agent-to-agent transactions",
+        "avoid": ["AI shopping", "bot commerce"]
+      },
+      "share of voice": {
+        "abbreviation": "SOV",
+        "definition": "Percentage of citations a brand receives relative to competitors",
+        "usage": "Always define on first use in each chapter"
+      },
+      "owned ecosystem": {
+        "definition": "Client-controlled digital properties (websites, apps)",
+        "usage": "Prefer over 'Web/DTC' in conceptual content",
+        "note": "Web/DTC acceptable in tactical/implementation content"
+      },
+      "offsite influence": {
+        "definition": "Third-party signals that shape AI perception of brand",
+        "usage": "Use in strategic content",
+        "avoid": ["external content", "third-party SEO"]
+      },
+      "prompt bank": {
+        "definition": "Curated set of queries used to measure AI visibility",
+        "usage": "Consistent terminology for measurement setup",
+        "avoid": ["query list", "question set"]
+      }
+    },
+    "client_agnostic": {
+      "patterns": [
+        {
+          "instead_of": "Nike.com",
+          "use": "the client's primary domain"
+        },
+        {
+          "instead_of": "Nike Running",
+          "use": "the initial line of business"
+        },
+        {
+          "instead_of": "AWS Bedrock",
+          "use": "the selected LLM platform"
+        },
+        {
+          "instead_of": "OpenSearch",
+          "use": "the vector database"
+        },
+        {
+          "instead_of": "Profound",
+          "use": "the AEO measurement platform"
+        }
+      ],
+      "exceptions": [
+        "Technology Reference Architectures (Appendix A) may use specific product names",
+        "Case studies and examples may reference real companies"
+      ]
+    }
+  },
+  "tone": {
+    "primary": "authoritative-practical",
+    "description": "Expert guidance that enables immediate action",
+    "characteristics": [
+      {
+        "attribute": "confident",
+        "description": "State recommendations clearly without hedging",
+        "example_good": "Use a minimum of 400 prompts for pilot measurement.",
+        "example_bad": "You might want to consider using around 400 prompts or so."
+      },
+      {
+        "attribute": "actionable",
+        "description": "Focus on what to do, not just what to know",
+        "example_good": "Step 1: Export your product catalog. Step 2: Extract key entities.",
+        "example_bad": "It's important to understand your product catalog."
+      },
+      {
+        "attribute": "direct",
+        "description": "Lead with the main point, details follow",
+        "example_good": "GEO success requires three capabilities: content authority, structured data, and measurement infrastructure.",
+        "example_bad": "When thinking about GEO, there are many factors to consider, and among these factors, some are more important than others..."
+      },
+      {
+        "attribute": "practical",
+        "description": "Ground concepts in real-world application",
+        "example_good": "A typical retail client sees 15-25% SOV improvement in the first 90 days.",
+        "example_bad": "SOV improvements can vary based on many factors."
+      }
+    ],
+    "avoid": [
+      "Marketing hyperbole ('revolutionary', 'game-changing')",
+      "Excessive hedging ('might', 'could potentially', 'in some cases')",
+      "Passive voice where active is clearer",
+      "Unexplained acronyms on first use",
+      "Unnecessary superlatives"
+    ]
+  },
+  "formatting": {
+    "headings": {
+      "h1": "Volume titles only (one per volume)",
+      "h2": "Chapter titles",
+      "h3": "Major sections within chapters",
+      "h4": "Subsections",
+      "h5": "Sub-subsections (use sparingly)",
+      "style": "Sentence case for all headings",
+      "numbering": "Use hierarchical numbering (1.1, 1.2, etc.)"
+    },
+    "lists": {
+      "bulleted": "Use for unordered items, features, considerations",
+      "numbered": "Use for sequential steps, prioritized items, ranked options",
+      "nested": "Maximum 2 levels of nesting",
+      "parallelism": "All items in a list should have parallel grammatical structure"
+    },
+    "tables": {
+      "usage": "Use for comparisons, matrices, structured data",
+      "headers": "Always include descriptive column headers",
+      "alignment": "Left-align text, right-align numbers",
+      "complexity": "Maximum 7 columns; split complex tables"
+    },
+    "code_blocks": {
+      "usage": "Configuration examples, API snippets, structured data",
+      "language_tags": "Always specify language for syntax highlighting",
+      "comments": "Include explanatory comments for complex examples"
+    },
+    "callouts": {
+      "tldr": {
+        "usage": "Start of each chapter",
+        "format": "2-4 bullet points, key takeaways only",
+        "icon": "lightbulb"
+      },
+      "warning": {
+        "usage": "Anti-patterns, common mistakes, risks",
+        "format": "Brief statement of what to avoid and why",
+        "icon": "alert-triangle"
+      },
+      "tip": {
+        "usage": "Best practices, pro tips, efficiency gains",
+        "format": "Actionable advice",
+        "icon": "zap"
+      },
+      "note": {
+        "usage": "Additional context, caveats, clarifications",
+        "format": "Supplementary information",
+        "icon": "info"
+      },
+      "example": {
+        "usage": "Real-world illustrations of concepts",
+        "format": "Scenario + application + outcome",
+        "icon": "file-text"
+      }
+    }
+  },
+  "content_patterns": {
+    "chapter_structure": [
+      "TL;DR box (key takeaways)",
+      "Introduction (context and why it matters)",
+      "Core content (main sections)",
+      "Practical application (how to use this)",
+      "Common pitfalls (what to avoid)",
+      "Next steps (where to go from here)",
+      "Related chapters (cross-references)"
+    ],
+    "section_structure": [
+      "Section heading",
+      "Brief context (1-2 sentences)",
+      "Main content",
+      "Visual (diagram, table, or example)",
+      "Key takeaway or action item"
+    ],
+    "comparison_pattern": {
+      "format": "table",
+      "required_columns": ["Option", "Best For", "Pros", "Cons", "Recommendation"]
+    },
+    "process_pattern": {
+      "format": "numbered_list_with_details",
+      "structure": "Step number + action verb + object + details"
+    },
+    "decision_pattern": {
+      "format": "if_then_table",
+      "columns": ["If (Condition)", "Then (Action)", "Because (Rationale)"]
+    }
+  },
+  "accessibility": {
+    "images": {
+      "alt_text": "Required for all images",
+      "format": "Describe the content and purpose, not just 'diagram'"
+    },
+    "color": {
+      "contrast": "Minimum 4.5:1 for body text",
+      "meaning": "Never convey information by color alone"
+    },
+    "structure": {
+      "headings": "Must be hierarchical (no skipping levels)",
+      "landmarks": "Use semantic HTML landmarks"
+    }
+  },
+  "output_specific": {
+    "html": {
+      "collapsible_sections": true,
+      "search_enabled": true,
+      "print_styles": true,
+      "dark_mode": true
+    },
+    "pdf": {
+      "page_breaks": "Before each chapter",
+      "headers_footers": true,
+      "toc_depth": 3,
+      "page_numbers": true
+    },
+    "slides": {
+      "max_bullets_per_slide": 5,
+      "max_words_per_slide": 50,
+      "visuals_required": true
+    }
+  }
+}

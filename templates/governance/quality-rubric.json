@@ -1,0 +1,350 @@
+{
+  "$schema": "quality-rubric-schema.json",
+  "version": "1.0.0",
+  "thresholds": {
+    "pass": 85,
+    "minimum_dimension": 75,
+    "max_iterations": 3
+  },
+  "dimensions": {
+    "completeness": {
+      "weight": 20,
+      "description": "All required content is present and thorough",
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "Section Coverage",
+          "description": "All sections defined in IA are present",
+          "scoring": {
+            "100": "All sections present with full content",
+            "80": "All sections present, minor gaps in subsections",
+            "60": "1-2 sections missing or placeholder content",
+            "40": "Multiple sections missing",
+            "0": "Majority of sections missing"
+          }
+        },
+        {
+          "id": "C2",
+          "name": "Depth of Coverage",
+          "description": "Topics covered with appropriate depth",
+          "scoring": {
+            "100": "Expert-level depth with examples and nuance",
+            "80": "Solid coverage with practical guidance",
+            "60": "Surface-level coverage, lacks examples",
+            "40": "Superficial, missing key concepts",
+            "0": "Inadequate depth throughout"
+          }
+        },
+        {
+          "id": "C3",
+          "name": "Cross-References",
+          "description": "Internal links and references complete",
+          "scoring": {
+            "100": "All cross-references valid and bidirectional",
+            "80": "Most cross-references present and working",
+            "60": "Some broken or missing references",
+            "40": "Minimal cross-referencing",
+            "0": "No cross-referencing"
+          }
+        }
+      ]
+    },
+    "accuracy": {
+      "weight": 20,
+      "description": "Content is factually correct and verifiable",
+      "criteria": [
+        {
+          "id": "A1",
+          "name": "Factual Correctness",
+          "description": "Claims are accurate and traceable",
+          "scoring": {
+            "100": "All facts verified against sources",
+            "80": "Minor inaccuracies, nothing material",
+            "60": "Some unverified claims present",
+            "40": "Material inaccuracies found",
+            "0": "Significant factual errors"
+          }
+        },
+        {
+          "id": "A2",
+          "name": "No Hallucination",
+          "description": "No fabricated facts or false specifics",
+          "scoring": {
+            "100": "Zero hallucination detected",
+            "80": "Minimal, non-material embellishments",
+            "60": "Some unsubstantiated claims",
+            "40": "Fabricated statistics or claims",
+            "0": "Significant hallucination"
+          },
+          "critical": true
+        },
+        {
+          "id": "A3",
+          "name": "Currency",
+          "description": "Information is current and not outdated",
+          "scoring": {
+            "100": "All references current (2024-2025)",
+            "80": "Minor dated references, context valid",
+            "60": "Some outdated information",
+            "40": "Significantly dated content",
+            "0": "Obsolete information throughout"
+          }
+        }
+      ]
+    },
+    "clarity": {
+      "weight": 20,
+      "description": "Content is clear, organized, and accessible",
+      "criteria": [
+        {
+          "id": "CL1",
+          "name": "TL;DR Presence",
+          "description": "Executive summaries for each major section",
+          "scoring": {
+            "100": "All chapters have clear TL;DR",
+            "80": "Most chapters have TL;DR",
+            "60": "Some TL;DRs present",
+            "40": "Few TL;DRs, inconsistent",
+            "0": "No executive summaries"
+          }
+        },
+        {
+          "id": "CL2",
+          "name": "Logical Flow",
+          "description": "Content flows logically within and across sections",
+          "scoring": {
+            "100": "Perfect logical progression",
+            "80": "Clear flow with minor jumps",
+            "60": "Some disjointed sections",
+            "40": "Confusing organization",
+            "0": "No logical structure"
+          }
+        },
+        {
+          "id": "CL3",
+          "name": "Jargon Management",
+          "description": "Technical terms explained or used appropriately",
+          "scoring": {
+            "100": "All jargon explained or industry-standard",
+            "80": "Occasional unexplained terms",
+            "60": "Frequent jargon without context",
+            "40": "Excessive unexplained jargon",
+            "0": "Inaccessible language throughout"
+          }
+        },
+        {
+          "id": "CL4",
+          "name": "Reading Level",
+          "description": "Appropriate for business/executive audience",
+          "scoring": {
+            "100": "Perfect for senior business audience",
+            "80": "Mostly appropriate, some over-simplification",
+            "60": "Too technical or too basic in places",
+            "40": "Misaligned reading level",
+            "0": "Completely wrong audience"
+          }
+        }
+      ]
+    },
+    "actionability": {
+      "weight": 20,
+      "description": "Content enables immediate action",
+      "criteria": [
+        {
+          "id": "AC1",
+          "name": "Checklists",
+          "description": "Actionable checklists where appropriate",
+          "scoring": {
+            "100": "Comprehensive checklists for all processes",
+            "80": "Good checklist coverage",
+            "60": "Some checklists present",
+            "40": "Few actionable checklists",
+            "0": "No checklists"
+          }
+        },
+        {
+          "id": "AC2",
+          "name": "Next Steps",
+          "description": "Clear next actions at end of sections",
+          "scoring": {
+            "100": "Every section has clear next steps",
+            "80": "Most sections have next steps",
+            "60": "Some sections lack guidance",
+            "40": "Minimal next steps provided",
+            "0": "No action guidance"
+          }
+        },
+        {
+          "id": "AC3",
+          "name": "Templates",
+          "description": "Usable templates and worksheets included",
+          "scoring": {
+            "100": "Complete set of ready-to-use templates",
+            "80": "Good template coverage",
+            "60": "Some templates, not comprehensive",
+            "40": "Few templates",
+            "0": "No templates"
+          }
+        },
+        {
+          "id": "AC4",
+          "name": "Decision Frameworks",
+          "description": "Clear frameworks for decision-making",
+          "scoring": {
+            "100": "Decision trees/matrices for all key decisions",
+            "80": "Most decision points have frameworks",
+            "60": "Some decision support",
+            "40": "Minimal decision frameworks",
+            "0": "No decision support"
+          }
+        }
+      ]
+    },
+    "visual_quality": {
+      "weight": 10,
+      "description": "Visual elements enhance understanding",
+      "criteria": [
+        {
+          "id": "V1",
+          "name": "Diagram Coverage",
+          "description": "Complex concepts have visual representations",
+          "scoring": {
+            "100": "All complex concepts visualized",
+            "80": "Most concepts have diagrams",
+            "60": "Some diagrams present",
+            "40": "Few visuals",
+            "0": "No diagrams"
+          }
+        },
+        {
+          "id": "V2",
+          "name": "Table Usage",
+          "description": "Comparisons use tables effectively",
+          "scoring": {
+            "100": "All comparisons in well-structured tables",
+            "80": "Good table usage",
+            "60": "Some tables, inconsistent",
+            "40": "Minimal table usage",
+            "0": "No tables"
+          }
+        },
+        {
+          "id": "V3",
+          "name": "Visual Consistency",
+          "description": "Visual elements follow design system",
+          "scoring": {
+            "100": "Perfect design system adherence",
+            "80": "Minor styling inconsistencies",
+            "60": "Noticeable style variations",
+            "40": "Inconsistent visual treatment",
+            "0": "No visual consistency"
+          }
+        }
+      ]
+    },
+    "consistency": {
+      "weight": 10,
+      "description": "Uniform terminology, tone, and formatting",
+      "criteria": [
+        {
+          "id": "CO1",
+          "name": "Terminology",
+          "description": "Key terms used consistently",
+          "scoring": {
+            "100": "Perfect terminology consistency",
+            "80": "Minor variations in term usage",
+            "60": "Some inconsistent terminology",
+            "40": "Confusing term variations",
+            "0": "Inconsistent throughout"
+          }
+        },
+        {
+          "id": "CO2",
+          "name": "Tone/Voice",
+          "description": "Consistent professional voice",
+          "scoring": {
+            "100": "Uniform professional tone",
+            "80": "Minor voice variations",
+            "60": "Noticeable tone shifts",
+            "40": "Inconsistent voice",
+            "0": "Jarring tone changes"
+          }
+        },
+        {
+          "id": "CO3",
+          "name": "Formatting",
+          "description": "Consistent heading, list, and paragraph formatting",
+          "scoring": {
+            "100": "Perfect formatting consistency",
+            "80": "Minor formatting variations",
+            "60": "Some inconsistent formatting",
+            "40": "Inconsistent structure",
+            "0": "No formatting standards"
+          }
+        }
+      ]
+    }
+  },
+  "validation_checks": {
+    "automated": [
+      {
+        "id": "AUTO-1",
+        "name": "Link Validation",
+        "description": "All internal links resolve correctly",
+        "type": "technical"
+      },
+      {
+        "id": "AUTO-2",
+        "name": "Word Count",
+        "description": "Sections meet minimum word count thresholds",
+        "type": "content",
+        "thresholds": {
+          "chapter": 2000,
+          "section": 500,
+          "subsection": 200
+        }
+      },
+      {
+        "id": "AUTO-3",
+        "name": "Variable Resolution",
+        "description": "No unresolved {{variables}} in output",
+        "type": "technical"
+      },
+      {
+        "id": "AUTO-4",
+        "name": "Image Alt Text",
+        "description": "All images have alt text",
+        "type": "accessibility"
+      }
+    ],
+    "agent_review": [
+      {
+        "id": "AGENT-1",
+        "name": "Abstraction Check",
+        "description": "No client-specific content in universal sections",
+        "agent": "accuracy-agent"
+      },
+      {
+        "id": "AGENT-2",
+        "name": "Hallucination Scan",
+        "description": "Verify all claims against source material",
+        "agent": "accuracy-agent"
+      },
+      {
+        "id": "AGENT-3",
+        "name": "Style Compliance",
+        "description": "Check against style guide rules",
+        "agent": "style-agent"
+      }
+    ]
+  },
+  "remediation": {
+    "strategy": "targeted",
+    "description": "Fix specific issues rather than regenerating entire sections",
+    "priority_order": [
+      "critical_criteria",
+      "low_scoring_dimensions",
+      "automated_failures"
+    ]
+  }
+}

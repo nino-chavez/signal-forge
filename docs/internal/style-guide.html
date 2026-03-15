@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Forge Presentation Design System - Style Guide</title>
+    
+    <!-- Adobe Fonts: Default Project (includes Rival Sans, Komet, Darkmode-Off, Apparat, Elza, Articulat) -->
+    <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css">
+    
+    <!-- Adobe Fonts: Rival Sans Project (backup/alternative) -->
+    <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css">
+    
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    
+    <style>
+        /* Design System CSS Variables */
+        :root {
+            /* Brand Colors */
+            --color-brand-violet: #7c3aed;
+            --color-brand-orange: #ea580c;
+            --color-brand-navy: #1a365d;
+            --color-brand-success: #10b981;
+            --color-brand-warning: #f59e0b;
+            --color-brand-error: #ef4444;
+            
+            /* Neutral Scale */
+            --color-neutral-50: #fafafa;
+            --color-neutral-100: #f5f5f5;
+            --color-neutral-200: #e5e5e5;
+            --color-neutral-300: #d4d4d4;
+            --color-neutral-400: #a3a3a3;
+            --color-neutral-500: #737373;
+            --color-neutral-600: #525252;
+            --color-neutral-700: #404040;
+            --color-neutral-800: #262626;
+            --color-neutral-900: #171717;
+            --color-neutral-950: #0a0a0a;
+            
+            /* Semantic Text Colors */
+            --color-text-primary: #171717;
+            --color-text-secondary: #404040;
+            --color-text-body: #525252;
+            --color-text-muted: #a3a3a3;
+            --color-text-inverse: #fafafa;
+            
+            /* Semantic Background Colors */
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #f5f5f5;
+            --color-bg-accent: #f5e6ff;
+            --color-bg-dark: #111827;
+            
+            /* Typography */
+            --font-family-primary: "rival-sans", "komet", "darkmode-off", system-ui, -apple-system, sans-serif;
+            --font-size-display: 4.5rem;
+            --font-size-h1: 3rem;
+            --font-size-h2: 2rem;
+            --font-size-h3: 1.5rem;
+            --font-size-body: 1.125rem;
+            --font-size-small: 0.875rem;
+            --font-size-tiny: 0.75rem;
+            
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            --font-weight-extrabold: 800;
+            
+            --line-height-tight: 1.2;
+            --line-height-normal: 1.5;
+            --line-height-relaxed: 1.75;
+            --line-height-loose: 2;
+            
+            --letter-spacing-tight: -0.02em;
+            --letter-spacing-normal: 0;
+            --letter-spacing-wide: 0.05em;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --spacing-3xl: 6rem;
+            
+            /* Timing */
+            --duration-quick-snap: 90ms;
+            --duration-reaction: 120ms;
+            --duration-transition: 160ms;
+            --duration-sequence: 220ms;
+            --duration-flow: 300ms;
+            --duration-power: 400ms;
+            
+            /* Easing */
+            --easing-snap: cubic-bezier(0.4, 0, 0.2, 1);
+            --easing-flow: cubic-bezier(0.25, 0.1, 0.25, 1);
+            --easing-precision: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --easing-sprint: cubic-bezier(0.55, 0, 0.1, 1);
+            --easing-glide: cubic-bezier(0.25, 0, 0.75, 1);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            /* Borders */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-full: 9999px;
+            
+            --border-width-thin: 1px;
+            --border-width-medium: 2px;
+            --border-width-thick: 4px;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family-primary);
+            font-size: var(--font-size-body);
+            line-height: var(--line-height-relaxed);
+            color: var(--color-text-body);
+            background: var(--color-bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-2xl);
+        }
+        
+        .section {
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .section-title {
+            font-size: var(--font-size-h2);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-brand-violet);
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: var(--border-width-medium) solid var(--color-brand-violet);
+        }
+        
+        .subsection-title {
+            font-size: var(--font-size-h3);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: var(--spacing-md);
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        /* Card Components */
+        .card {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .card-primary {
+            background: var(--color-bg-primary);
+            border: var(--border-width-medium) solid var(--color-brand-violet);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .card-secondary {
+            background: var(--color-bg-secondary);
+            border: var(--border-width-thin) solid var(--color-neutral-200);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .card-accent {
+            background: var(--color-bg-accent);
+            border: var(--border-width-medium) solid var(--color-brand-violet);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .card-dark {
+            background: var(--color-bg-dark);
+            border: var(--border-width-thin) solid var(--color-neutral-700);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-lg);
+            color: var(--color-text-inverse);
+        }
+        
+        /* Typography Examples */
+        .typography-display {
+            font-size: var(--font-size-display);
+            font-weight: var(--font-weight-extrabold);
+            line-height: var(--line-height-tight);
+            letter-spacing: var(--letter-spacing-tight);
+            color: var(--color-text-primary);
+        }
+        
+        .typography-h1 {
+            font-size: var(--font-size-h1);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-tight);
+            letter-spacing: var(--letter-spacing-tight);
+            color: var(--color-brand-violet);
+        }
+        
+        .typography-h2 {
+            font-size: var(--font-size-h2);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-normal);
+            color: var(--color-text-primary);
+        }
+        
+        .typography-h3 {
+            font-size: var(--font-size-h3);
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-normal);
+            color: var(--color-text-secondary);
+        }
+        
+        .typography-body {
+            font-size: var(--font-size-body);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--line-height-relaxed);
+            color: var(--color-text-body);
+        }
+        
+        .typography-small {
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--line-height-normal);
+            color: var(--color-text-muted);
+        }
+        
+        .section-heading {
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-brand-violet);
+            text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-wide);
+        }
+        
+        /* Font Family Examples */
+        .font-family-demo {
+            border: var(--border-width-thin) solid var(--color-neutral-200);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            background: var(--color-bg-primary);
+        }
+        
+        .font-family-label {
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-brand-violet);
+            text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-wide);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: var(--border-width-thin) solid var(--color-neutral-200);
+        }
+        
+        .font-family-code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: var(--font-size-tiny);
+            color: var(--color-text-muted);
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            display: inline-block;
+            margin-top: var(--spacing-xs);
+        }
+        
+        /* Color Swatches */
+        .color-swatch {
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-sm);
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .color-swatch-label {
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .color-swatch-value {
+            font-size: var(--font-size-tiny);
+            font-family: monospace;
+            opacity: 0.8;
+        }
+        
+        /* Spacing Examples */
+        .spacing-demo {
+            background: var(--color-bg-accent);
+            border: 1px dashed var(--color-brand-violet);
+            display: inline-block;
+            margin-right: var(--spacing-sm);
+        }
+        
+        /* Animation Examples */
+        .animate-fade-in {
+            animation: fadeIn var(--duration-flow) var(--easing-flow);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .interactive {
+            transition: transform var(--duration-reaction) var(--easing-snap);
+            cursor: pointer;
+        }
+        
+        .interactive:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Code Block */
+        .code-block {
+            background: var(--color-neutral-950);
+            color: var(--color-text-inverse);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: var(--font-size-small);
+            overflow-x: auto;
+            margin: var(--spacing-md) 0;
+        }
+        
+        /* Slide Preview */
+        .slide-preview {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--color-bg-primary);
+            border: var(--border-width-thin) solid var(--color-neutral-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            box-shadow: var(--shadow-xl);
+            margin: var(--spacing-lg) 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--color-brand-violet) 0%, var(--color-brand-navy) 100%);
+            color: var(--color-text-inverse);
+            padding: var(--spacing-2xl) 0;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-2xl);
+        }
+        
+        .header h1 {
+            font-size: var(--font-size-display);
+            font-weight: var(--font-weight-extrabold);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .header p {
+            font-size: var(--font-size-h3);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Signal Forge Presentation Design System</h1>
+            <p>Complete style guide and component library</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Colors Section -->
+        <section class="section">
+            <h2 class="section-title">Colors</h2>
+            
+            <h3 class="subsection-title">Brand Colors</h3>
+            <div class="grid grid-3">
+                <div class="color-swatch" style="background: var(--color-brand-violet); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Violet</div>
+                        <div class="color-swatch-value">#7c3aed</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-brand-orange); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Orange</div>
+                        <div class="color-swatch-value">#ea580c</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-brand-navy); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Navy</div>
+                        <div class="color-swatch-value">#1a365d</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-brand-success); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Success</div>
+                        <div class="color-swatch-value">#10b981</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-brand-warning); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Warning</div>
+                        <div class="color-swatch-value">#f59e0b</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-brand-error); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Error</div>
+                        <div class="color-swatch-value">#ef4444</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">Neutral Scale</h3>
+            <div class="grid grid-4">
+                <div class="color-swatch" style="background: var(--color-neutral-50); color: var(--color-text-primary);">
+                    <div>
+                        <div class="color-swatch-label">Neutral 50</div>
+                        <div class="color-swatch-value">#fafafa</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-100); color: var(--color-text-primary);">
+                    <div>
+                        <div class="color-swatch-label">Neutral 100</div>
+                        <div class="color-swatch-value">#f5f5f5</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-200); color: var(--color-text-primary);">
+                    <div>
+                        <div class="color-swatch-label">Neutral 200</div>
+                        <div class="color-swatch-value">#e5e5e5</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-300); color: var(--color-text-primary);">
+                    <div>
+                        <div class="color-swatch-label">Neutral 300</div>
+                        <div class="color-swatch-value">#d4d4d4</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-400); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Neutral 400</div>
+                        <div class="color-swatch-value">#a3a3a3</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-500); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Neutral 500</div>
+                        <div class="color-swatch-value">#737373</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-600); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Neutral 600</div>
+                        <div class="color-swatch-value">#525252</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-700); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Neutral 700</div>
+                        <div class="color-swatch-value">#404040</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-800); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Neutral 800</div>
+                        <div class="color-swatch-value">#262626</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-900); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Neutral 900</div>
+                        <div class="color-swatch-value">#171717</div>
+                    </div>
+                </div>
+                <div class="color-swatch" style="background: var(--color-neutral-950); color: white;">
+                    <div>
+                        <div class="color-swatch-label">Neutral 950</div>
+                        <div class="color-swatch-value">#0a0a0a</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Typography Section -->
+        <section class="section">
+            <h2 class="section-title">Typography</h2>
+            
+            <!-- Font Family Comparison -->
+            <h3 class="subsection-title">Font Family Comparison</h3>
+            <p class="typography-body" style="margin-bottom: var(--spacing-lg);">
+                Compare each font family in the stack to see which one is actually rendering:
+            </p>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Rival Sans (Primary)</div>
+                <div style="font-family: 'rival-sans', sans-serif; font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'rival-sans', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "rival-sans", sans-serif;</div>
+            </div>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Komet (Alternate)</div>
+                <div style="font-family: 'komet', sans-serif; font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'komet', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "komet", sans-serif;</div>
+            </div>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Darkmode-Off (Alternate)</div>
+                <div style="font-family: 'darkmode-off', sans-serif; font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'darkmode-off', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "darkmode-off", sans-serif;</div>
+            </div>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Rival Sans Narrow</div>
+                <div style="font-family: 'rival-sans-narrow', sans-serif; font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'rival-sans-narrow', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "rival-sans-narrow", sans-serif;</div>
+            </div>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Komet SC</div>
+                <div style="font-family: 'komet-sc', sans-serif; font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'komet-sc', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "komet-sc", sans-serif;</div>
+            </div>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Apparat SemiCond</div>
+                <div style="font-family: 'apparat-semicond', sans-serif; font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'apparat-semicond', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "apparat-semicond", sans-serif;</div>
+            </div>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Elza Narrow</div>
+                <div style="font-family: 'elza-narrow', sans-serif; font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'elza-narrow', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "elza-narrow", sans-serif;</div>
+            </div>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Articulat CF</div>
+                <div style="font-family: 'articulat-cf', sans-serif; font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'articulat-cf', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "articulat-cf", sans-serif;</div>
+            </div>
+            
+            <div class="font-family-demo">
+                <div class="font-family-label">Articulat Heavy CF</div>
+                <div style="font-family: 'articulat-heavy-cf', sans-serif; font-size: var(--font-size-h2); font-weight: 900; margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-family: 'articulat-heavy-cf', sans-serif; font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "articulat-heavy-cf", sans-serif; font-weight: 900;</div>
+            </div>
+            
+            <div class="font-family-demo" style="background: var(--color-bg-secondary);">
+                <div class="font-family-label">Current Font Stack (Active)</div>
+                <div style="font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">
+                    The quick brown fox jumps over the lazy dog
+                </div>
+                <div style="font-size: var(--font-size-body); margin-bottom: var(--spacing-xs);">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&*()
+                </div>
+                <div class="font-family-code">font-family: "rival-sans", "komet", "darkmode-off", "apparat-semicond", "elza-narrow", "articulat-cf", system-ui, -apple-system, sans-serif;</div>
+                <p class="typography-small" style="margin-top: var(--spacing-sm); color: var(--color-text-muted);">
+                    This shows which font is actually rendering from the full stack. If Rival Sans loads, it will match the first example above.
+                </p>
+            </div>
+            
+            <h3 class="subsection-title">Typography Scale</h3>
+            <div class="card">
+                <div class="typography-display" style="margin-bottom: var(--spacing-lg);">
+                    Display Text (72px)
+                </div>
+                <div class="code-block">font-size: var(--font-size-display);<br>font-weight: var(--font-weight-extrabold);<br>line-height: var(--line-height-tight);</div>
+                
+                <div class="typography-h1" style="margin: var(--spacing-xl) 0 var(--spacing-lg);">
+                    Heading 1 - Slide Title (48px)
+                </div>
+                <div class="code-block">font-size: var(--font-size-h1);<br>font-weight: var(--font-weight-bold);<br>color: var(--color-brand-violet);</div>
+                
+                <div class="typography-h2" style="margin: var(--spacing-xl) 0 var(--spacing-lg);">
+                    Heading 2 - Section Heading (32px)
+                </div>
+                <div class="code-block">font-size: var(--font-size-h2);<br>font-weight: var(--font-weight-bold);</div>
+                
+                <div class="typography-h3" style="margin: var(--spacing-xl) 0 var(--spacing-lg);">
+                    Heading 3 - Subsection (24px)
+                </div>
+                <div class="code-block">font-size: var(--font-size-h3);<br>font-weight: var(--font-weight-semibold);</div>
+                
+                <div class="typography-body" style="margin: var(--spacing-xl) 0 var(--spacing-lg);">
+                    Body text (18px) - This is the standard body text used throughout presentations. It provides excellent readability at all sizes and maintains proper line height for comfortable reading. The Rival Sans font family (from Adobe Fonts) ensures professional appearance across all devices.
+                </div>
+                <div class="code-block">font-size: var(--font-size-body);<br>font-weight: var(--font-weight-regular);<br>line-height: var(--line-height-relaxed);</div>
+                
+                <div class="typography-small" style="margin: var(--spacing-xl) 0 var(--spacing-lg);">
+                    Small text (14px) - Used for captions, metadata, and secondary information.
+                </div>
+                <div class="code-block">font-size: var(--font-size-small);</div>
+                
+                <div class="section-heading" style="margin: var(--spacing-xl) 0 var(--spacing-lg);">
+                    Section Heading (14px Uppercase)
+                </div>
+                <div class="code-block">font-size: var(--font-size-small);<br>text-transform: uppercase;<br>letter-spacing: var(--letter-spacing-wide);<br>color: var(--color-brand-violet);</div>
+            </div>
+        </section>
+        
+        <!-- Card Components Section -->
+        <section class="section">
+            <h2 class="section-title">Card Components</h2>
+            
+            <div class="grid grid-2">
+                <div class="card-primary interactive">
+                    <h3 class="typography-h3" style="margin-bottom: var(--spacing-sm);">Card Primary</h3>
+                    <p class="typography-body">Primary content sections with violet border accent. Used for key information and important callouts.</p>
+                    <div class="code-block" style="margin-top: var(--spacing-md); font-size: 0.75rem;">
+                        .card-primary
+                    </div>
+                </div>
+                
+                <div class="card-secondary interactive">
+                    <h3 class="typography-h3" style="margin-bottom: var(--spacing-sm);">Card Secondary</h3>
+                    <p class="typography-body">Supporting content with subtle background. Used for secondary information and grouped content.</p>
+                    <div class="code-block" style="margin-top: var(--spacing-md); font-size: 0.75rem;">
+                        .card-secondary
+                    </div>
+                </div>
+                
+                <div class="card-accent interactive">
+                    <h3 class="typography-h3" style="margin-bottom: var(--spacing-sm);">Card Accent</h3>
+                    <p class="typography-body">Highlighted content with purple-tinted background. Used for important callouts and emphasis.</p>
+                    <div class="code-block" style="margin-top: var(--spacing-md); font-size: 0.75rem;">
+                        .card-accent
+                    </div>
+                </div>
+                
+                <div class="card-dark interactive">
+                    <h3 class="typography-h3" style="margin-bottom: var(--spacing-sm); color: var(--color-text-inverse);">Card Dark</h3>
+                    <p class="typography-body" style="color: var(--color-text-inverse);">Dark theme card with light text. Used for contrast slides and section dividers.</p>
+                    <div class="code-block" style="margin-top: var(--spacing-md); font-size: 0.75rem;">
+                        .card-dark
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Spacing Section -->
+        <section class="section">
+            <h2 class="section-title">Spacing Scale</h2>
+            
+            <div class="card">
+                <div style="margin-bottom: var(--spacing-md);">
+                    <div class="spacing-demo" style="width: var(--spacing-xs); height: var(--spacing-xs);"></div>
+                    <span class="typography-small">XS (8px)</span>
+                </div>
+                <div style="margin-bottom: var(--spacing-md);">
+                    <div class="spacing-demo" style="width: var(--spacing-sm); height: var(--spacing-sm);"></div>
+                    <span class="typography-small">SM (16px)</span>
+                </div>
+                <div style="margin-bottom: var(--spacing-md);">
+                    <div class="spacing-demo" style="width: var(--spacing-md); height: var(--spacing-md);"></div>
+                    <span class="typography-small">MD (24px)</span>
+                </div>
+                <div style="margin-bottom: var(--spacing-md);">
+                    <div class="spacing-demo" style="width: var(--spacing-lg); height: var(--spacing-lg);"></div>
+                    <span class="typography-small">LG (32px)</span>
+                </div>
+                <div style="margin-bottom: var(--spacing-md);">
+                    <div class="spacing-demo" style="width: var(--spacing-xl); height: var(--spacing-xl);"></div>
+                    <span class="typography-small">XL (48px)</span>
+                </div>
+                <div style="margin-bottom: var(--spacing-md);">
+                    <div class="spacing-demo" style="width: var(--spacing-2xl); height: var(--spacing-2xl);"></div>
+                    <span class="typography-small">2XL (64px)</span>
+                </div>
+                <div>
+                    <div class="spacing-demo" style="width: var(--spacing-3xl); height: var(--spacing-3xl);"></div>
+                    <span class="typography-small">3XL (96px)</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Slide Layout Examples -->
+        <section class="section">
+            <h2 class="section-title">Slide Layout Examples</h2>
+            
+            <h3 class="subsection-title">Title Slide</h3>
+            <div class="slide-preview" style="background: linear-gradient(135deg, var(--color-brand-violet) 0%, var(--color-brand-navy) 100%); color: white; text-align: center;">
+                <div class="typography-display" style="color: white; margin-bottom: var(--spacing-lg);">
+                    The Existential Pivot
+                </div>
+                <div class="typography-h3" style="color: rgba(255,255,255,0.9);">
+                    From selling connectivity to humans to managing digital lives for agents
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">Content Slide</h3>
+            <div class="slide-preview">
+                <div class="typography-h1" style="margin-bottom: var(--spacing-xl);">
+                    The New Economic Actor
+                </div>
+                <div style="max-width: 800px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li class="typography-body" style="margin-bottom: var(--spacing-md); padding-left: var(--spacing-lg); position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--color-brand-violet);">•</span>
+                            Hook: "We've spent 30 years learning to sell to people. Now we must learn to sell to their algorithms."
+                        </li>
+                        <li class="typography-body" style="margin-bottom: var(--spacing-md); padding-left: var(--spacing-lg); position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--color-brand-violet);">•</span>
+                            By 2030, industry projections suggest a significant portion of consumer spending will be mediated by AI agents
+                        </li>
+                        <li class="typography-body" style="margin-bottom: var(--spacing-md); padding-left: var(--spacing-lg); position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--color-brand-violet);">•</span>
+                            Your customers' agents are becoming your primary customers
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">Section Divider</h3>
+            <div class="slide-preview" style="background: var(--color-bg-dark); color: white; text-align: center;">
+                <div class="typography-h1" style="color: white; margin-bottom: var(--spacing-md);">
+                    The Three Pillars of Defense
+                </div>
+                <div class="typography-body" style="color: rgba(255,255,255,0.8);">
+                    Building the infrastructure for agent-mediated commerce
+                </div>
+            </div>
+        </section>
+        
+        <!-- Animations Section -->
+        <section class="section">
+            <h2 class="section-title">Animations & Transitions</h2>
+            
+            <div class="grid grid-3">
+                <div class="card animate-fade-in">
+                    <h3 class="typography-h3" style="margin-bottom: var(--spacing-sm);">Fade In</h3>
+                    <p class="typography-small">Duration: var(--duration-flow)<br>Easing: var(--easing-flow)</p>
+                </div>
+                
+                <div class="card interactive">
+                    <h3 class="typography-h3" style="margin-bottom: var(--spacing-sm);">Hover Scale</h3>
+                    <p class="typography-small">Hover to see scale effect<br>Duration: var(--duration-reaction)</p>
+                </div>
+                
+                <div class="card" style="transition: all var(--duration-transition) var(--easing-precision);">
+                    <h3 class="typography-h3" style="margin-bottom: var(--spacing-sm);">Smooth Transition</h3>
+                    <p class="typography-small">Precision easing for smooth animations</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Usage Guidelines -->
+        <section class="section">
+            <h2 class="section-title">Usage Guidelines</h2>
+            
+            <div class="card">
+                <h3 class="typography-h3" style="margin-bottom: var(--spacing-md);">Best Practices</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li class="typography-body" style="margin-bottom: var(--spacing-sm); padding-left: var(--spacing-lg); position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--color-brand-violet);">✓</span>
+                        Always use design tokens from the system, never hardcode values
+                    </li>
+                    <li class="typography-body" style="margin-bottom: var(--spacing-sm); padding-left: var(--spacing-lg); position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--color-brand-violet);">✓</span>
+                        Maintain typography hierarchy (H1 > H2 > H3 > Body)
+                    </li>
+                    <li class="typography-body" style="margin-bottom: var(--spacing-sm); padding-left: var(--spacing-lg); position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--color-brand-violet);">✓</span>
+                        Use spacing scale consistently (8px base unit)
+                    </li>
+                    <li class="typography-body" style="margin-bottom: var(--spacing-sm); padding-left: var(--spacing-lg); position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--color-brand-violet);">✓</span>
+                        Keep animations subtle and purposeful
+                    </li>
+                    <li class="typography-body" style="margin-bottom: var(--spacing-sm); padding-left: var(--spacing-lg); position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--color-brand-violet);">✓</span>
+                        Ensure WCAG AA contrast ratios for accessibility
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Source of Truth -->
+        <section class="section">
+            <h2 class="section-title">Source of Truth</h2>
+            
+            <div class="card">
+                <p class="typography-body" style="margin-bottom: var(--spacing-md);">
+                    All design tokens are defined in <strong>src/design-system/presentation-theme.ts</strong>
+                </p>
+                <p class="typography-body" style="margin-bottom: var(--spacing-md);">
+                    To modify any design token, edit that file and regenerate presentations.
+                </p>
+                <p class="typography-small" style="color: var(--color-text-muted);">
+                    See <strong>docs/design-system-presentation.md</strong> for complete documentation.
+                </p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+

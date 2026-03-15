@@ -1,0 +1,1 @@
+../../../../templates/architecture/adr-template.md

@@ -1,0 +1,1 @@
+../../../../docs/voice/solution-architecture-voice.md

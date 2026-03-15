@@ -1,0 +1,1 @@
+../../../../docs/voice/thought-leadership-voice.md

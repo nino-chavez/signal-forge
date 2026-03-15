@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+*.pptx
+*.docx
+*.pdf
+
+projects/
+.forge/
+.playwright-mcp/
+scripts/generate-*.ts
+scripts/*-pptx.ts
+scripts/*-roadmap*.ts
+
+# Local/private presets (not shipped with the project)
+presets-local/
+src/presets/local/
+
+# Generated output
+output/
+/content/

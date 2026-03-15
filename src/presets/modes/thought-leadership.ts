@@ -1,0 +1,46 @@
+import type { ContentModeDefinition } from '../../core/registries/types.js';
+
+export const thoughtLeadershipMode: ContentModeDefinition = {
+  id: 'thought-leadership',
+  name: 'Thought Leadership',
+  description: 'Blog posts, opinion pieces, reflections, and POVs exploring ideas',
+  defaultFor: ['post', 'article', 'pov', 'paper'],
+  signals: {
+    keywords: [
+      'explore',
+      'reflect',
+      "I've been thinking",
+      'question',
+      'tension',
+      'wonder',
+      'curious',
+      'observation',
+      "pattern I've noticed",
+      "here's what I think",
+      'provisional',
+      'for now',
+      'today I believe',
+      'evolution',
+      'I used to think',
+      'uncomfortable truth',
+      'what if',
+      'meta',
+    ],
+    audience: [
+      'readers',
+      'community',
+      'audience',
+      'subscribers',
+      'followers',
+      'practitioners',
+      'anyone who',
+    ],
+    structure: [
+      /^#+\s*The Tension/im,
+      /^#+\s*What I Think/im,
+      /^#+\s*Questions/im,
+      /^#+\s*Observations/im,
+      /\?\s*\n/g,
+    ],
+  },
+};
